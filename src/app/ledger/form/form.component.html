@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="child-content">
+        <div class="show-balance">
+            <label>Available Balance</label>
+            <h2>Rs.&nbsp;{{availableBalance | async}}</h2>
+        </div>
+        <div class="user-input">
+            <form #transactionForm="ngForm">
+                <div class="form-inputs">
+                    <div class="amount">
+                        <label>Amount</label><br>
+                        <input type="number" name="amount" placeholder="Ex:100" ngModel #amount="ngModel">
+                    </div>&nbsp;
+                    <div class="reason">
+                        <label>Reason</label><br>
+                        <input type="text" name="reason" placeholder="Ex:Spent for Dinner @ Hablis" ngModel #reason="ngModel">
+                    </div>
+                </div>
+                <br>
+                <div class="actions">
+                    <div class="action-btn">
+                        <button type="button" (click)="handleTransaction(transactionForm,'debit')">Debit</button>&nbsp;
+                        <button type="button" (click)="handleTransaction(transactionForm,'credit')">Credit</button>
+                    </div>
+                </div>
+                
+            </form>
+            
+        </div>
+    </div>
+</div>

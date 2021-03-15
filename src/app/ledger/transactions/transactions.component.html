@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="navigation">
+        <div class="all-transaction">
+            <button type="button" (click)="handleTransactionContent('all')" >All</button>
+        </div>&nbsp;
+        <div class="spends-transaction">
+            <button type="button" (click)="handleTransactionContent('spends')" >Spends</button>
+        </div>&nbsp;
+        <div class="received-transaction">
+            <button type="button" (click)="handleTransactionContent('received')" >Received</button>
+        </div>
+    </div>
+    <div class="child-content">
+        <div class="transactions" *ngFor="let transaction of transactions">
+            <app-transaction-tile [singleTransaction]="transaction"></app-transaction-tile>
+        </div>
+    </div>
+</div>
